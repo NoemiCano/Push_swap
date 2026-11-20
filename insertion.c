@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-void	sort(int *arr, int size)
+void	insertion(int *arr, int size)
 {
 	int	i = 0;
 	int	j;
@@ -39,7 +39,7 @@ int	main(void)
 	printf("Unordered array: ");
 	while (i < size)
 		printf("%d, ", arr[i++]);
-	sort(arr, size);
+	insertion(arr, size);
 	i = 0;
 	printf("\nOrdered array: ");
 	while (i < size)
