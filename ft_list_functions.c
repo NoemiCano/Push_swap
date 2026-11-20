@@ -52,3 +52,23 @@ void	ft_stack_add_back(t_stack *stack, t_list *new)
 	}
 	stack->size++;					//aumenta tamaño del stack
 }
+
+t_list	*ft_detach_stack_head(t_stack *stack) //devuelve la cabeza del stack y conecta el 2o elemento (y lo coloca como head) con el ultimo
+{
+	t_list	*tmp;
+
+	if (!stack || !stack->size) //verifica que sea un stack valido y que tenga contenidos
+		return (NULL);
+	tmp = stack->head;			//guarda el head original
+	if (stack->size == 1)		//en caso de un stack con un solo elemento, se vacia dejando head como NULL
+	{
+		stack->head = NULL;
+		stack->size--;
+		return (tmp);
+	}
+	stack->head->next->prev = stack->head->prev;	//asigna el ultimo elemento a prev del 2o elemento
+	stack->head = stack->head->next;				//coloca el 2o elemento como head
+	stack->head->prev->next = stack->head;			//asigna la nueva cabeza al ultimo elemento
+	stack->size--;									//reduce el tamaño del stack
+	return (tmp);									//retorna el viejo head
+}
