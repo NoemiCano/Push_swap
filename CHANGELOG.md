@@ -42,5 +42,5 @@
 
 ## 🚧 Próximos pasos
 
-- [ ] Añadir próximas tareas o mejoras.
-
+- [ ] Implementacion de algoritmo simple.
+- [ ] Implementacion de algoritmo complejo.
