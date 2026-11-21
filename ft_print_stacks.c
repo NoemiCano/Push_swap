@@ -13,49 +13,26 @@
 #include "ft_push_swap.h"
 #include <stdio.h>
 
-void	print_stacks(t_stack *a, t_stack *b)
+static void print_stack(t_stack *a, char name)
 {
 	t_node	*tmp;
 
-	if (a->head && b->head)
+	printf("values: %c: {", name);
+	tmp = a->head;
+	while (a->head->prev != tmp)
 	{
-		printf("Values: A: {");
-		tmp = a->head;
-		while (a->head->prev != tmp)
-		{
-			printf("%d, ", tmp->value);
-			tmp = tmp->next;
-		}
-		printf("%d}\n", a->head->prev->value);
-		printf("Values: B: {");
-		tmp = b->head;
-		while (b->head->prev != tmp)
-		{
-			printf("%d, ", tmp->value);
-			tmp = tmp->next;
-		}
-		printf("%d}\n", b->head->prev->value);
+		printf("%d, ", tmp->value);
+		tmp = tmp->next;
 	}
-	else if (a->head && !b->head)
-	{
-		printf("Values: A: {");
-		tmp = a->head;
-		while (a->head->prev != tmp)
-		{
-			printf("%d, ", tmp->value);
-			tmp = tmp->next;
-		}
-		printf("%d}\n", a->head->prev->value);
-	}
-	else if (b->head && !a->head)
-	{
-		printf("Values: B: {");
-		tmp = b->head;
-		while (b->head->prev != tmp)
-		{
-			printf("%d, ", tmp->value);
-			tmp = tmp->next;
-		}
-		printf("%d}\n", b->head->prev->value);
-	}
+	printf("%d}\n", a->head->prev->value);
+
+}
+
+
+void	print_stacks(t_stack *a, t_stack *b)
+{
+	if (a && a->head)
+		print_stack(a, 'A');
+	if (b && b->head)
+		print_stack(b, 'B');
 }

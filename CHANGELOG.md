@@ -18,6 +18,11 @@
 
 ## 📅 Historial
 
+### `21/11/2026` · `20:47`
+**Commit:** `compacted print stacks`
+
+- 🔵 Simplificación de `print_stacks`, gran reduccion del tamaño.
+
 ### `21/11/2026` · `20:34`
 **Commit:** `print stacks added`
 
