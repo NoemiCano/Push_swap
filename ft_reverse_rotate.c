@@ -12,20 +12,20 @@
 
 #include "push_swap.h"
 
-void	rrb(t_stack *b)
-{
-	if (!b || b->size < 2)
-		return ;
-	ft_putstr_fd("rrb\n", 1);
-	b->head = b->head->prev; 
-}
-
 void	rra(t_stack *a)
 {
 	if (!a || a->size < 2)
 		return ;
 	ft_putstr_fd("rra\n", 1);
 	a->head = a->head->prev; 
+}
+
+void	rrb(t_stack *b)
+{
+	if (!b || b->size < 2)
+		return ;
+	ft_putstr_fd("rrb\n", 1);
+	b->head = b->head->prev; 
 }
 
 void	rrr(t_stack *a, t_stack *b)
