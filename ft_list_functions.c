@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_functions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 16:27:36 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 16:27:36 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 10:29:44 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 void	ft_stack_add_front(t_stack *stack, t_list *new)
 {

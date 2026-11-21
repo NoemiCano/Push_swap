@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 17:50:03 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 10:32:03 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "libft/libft.h"
+# include <stddef.h> // Es para incluir NULL y size_t
 
 typedef struct s_list	//lista para cada valor
 {
