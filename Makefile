@@ -1,3 +1,4 @@
+#Nombre temporal para manejarlo mas comodamente
 NAME = pushlib.a
 
 CC = cc
