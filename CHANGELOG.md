@@ -18,6 +18,11 @@
 
 ## 📅 Historial
 
+### `21/11/2026` · `16:06`
+**Commit:** `list declaration fix`
+
+- 🟣 Renombrada la estructura propia de `t_list` a `t_node` para evitar conflictos con la definición de `t_list` de Libft.
+
 ### `21/11/2026` · `16:30`
 **Commit:** `header fixed`
 

@@ -6,7 +6,7 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 19:32:49 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 17:04:27 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	ft_swap(t_stack *a)
 {
-	t_list	*tmp;
-	t_list	*tmp2;
+	t_node	*tmp;
+	t_node	*tmp2;
 
 	if (a->size == 2)
 	{

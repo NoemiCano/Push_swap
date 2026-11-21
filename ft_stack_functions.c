@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_functions.c                                :+:      :+:    :+:   */
+/*   ft_stack_functions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 16:27:36 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 16:27:36 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 17:04:26 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_stack_add_front(t_stack *stack, t_list *new)
+void	ft_stack_add_front(t_stack *stack, t_node *new)
 {
 	if (!stack || !new)
 		return ;
@@ -33,7 +33,7 @@ void	ft_stack_add_front(t_stack *stack, t_list *new)
 	stack->size++;					//aumenta tamaño del stack
 }
 
-void	ft_stack_add_back(t_stack *stack, t_list *new)
+void	ft_stack_add_back(t_stack *stack, t_node *new)
 {
 	if (!stack || !new)
 		return ;
@@ -53,9 +53,9 @@ void	ft_stack_add_back(t_stack *stack, t_list *new)
 	stack->size++;					//aumenta tamaño del stack
 }
 
-t_list	*ft_detach_stack_head(t_stack *stack) //devuelve la cabeza del stack y conecta el 2o elemento (y lo coloca como head) con el ultimo
+t_node	*ft_detach_stack_head(t_stack *stack) //devuelve la cabeza del stack y conecta el 2o elemento (y lo coloca como head) con el ultimo
 {
-	t_list	*tmp;
+	t_node	*tmp;
 
 	if (!stack || !stack->size) //verifica que sea un stack valido y que tenga contenidos
 		return (NULL);
