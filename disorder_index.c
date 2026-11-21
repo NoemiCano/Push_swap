@@ -6,12 +6,13 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 17:52:52 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/20 18:34:47 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/21 13:12:19 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
+// Calcula el índice de deshorden entre 0 y 1.
 double compute_disorder(t_stack *stack)
 {
 	t_list	*current;

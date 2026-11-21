@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 16:00:28 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 19:40:00 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 13:20:29 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
+//  (rotate a): Desplaza hacia arriba todos los elementos del stack a una posición, convirtiendo el primer elemento en el último.
 void	ra(t_stack *a)
 {
 	if (!a || a->size < 2)
@@ -20,6 +21,7 @@ void	ra(t_stack *a)
 		a->head = a->head->next; 
 }
 
+// (rotate b): Desplaza hacia arriba todos los elementos del stack b una posición, convirtiendo el primer elemento en el último.
 void	rb(t_stack *b)
 {
 	if (!b || b->size < 2)
@@ -28,6 +30,7 @@ void	rb(t_stack *b)
 		b->head = b->head->next; 
 }
 
+// ra y rb a la vez.
 void	rr(t_stack *a, t_stack *b)
 {
 	if (!a || !b)

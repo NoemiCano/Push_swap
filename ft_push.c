@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:35:47 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 19:35:13 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 13:18:43 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
+//  (push a): Toma el primer elemento del stack b y lo coloca el primero en el stack a. No hace nada si b está vacío.
 void	pa(t_stack *a, t_stack *b)
 {
 	if (!a || !b || !b->head)
@@ -20,6 +21,7 @@ void	pa(t_stack *a, t_stack *b)
 	ft_stack_add_front(a, ft_detach_stack_head(b));
 }
 
+// (push b): Toma el primer elemento del stack a y lo coloca el primero en el stack b. No hace nada si a está vacío.
 void	pb(t_stack *a, t_stack *b)
 {
 	if (!a || !b || !a->head)

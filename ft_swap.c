@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 19:32:49 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 13:21:41 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 static void	ft_swap(t_stack *a)
 {
@@ -34,6 +34,7 @@ static void	ft_swap(t_stack *a)
 	a->head = tmp2;				//head se asigna al segundo, convirtiendolo en el nuevo primero
 }
 
+//  (swap a): Intercambia los dos primeros elementos del stack a. No hace nada si hay solo uno o ningún elemento.
 void	sa(t_stack *a)
 {
 	if (!a || a->size < 2)
@@ -42,6 +43,7 @@ void	sa(t_stack *a)
 	ft_swap(a);
 }
 
+// (swap b): Intercambia los dos primeros elementos del stack b. No hace nada si hay solo uno o ningún elemento.
 void	sb(t_stack *b)
 {
 	if (!b || b->size < 2)
@@ -50,6 +52,7 @@ void	sb(t_stack *b)
 	ft_swap(b);
 }
 
+// sa y sb a la vez.
 void	ss(t_stack *a, t_stack *b)
 {
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
