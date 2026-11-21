@@ -6,11 +6,11 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 16:27:36 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 17:04:26 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 17:14:23 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 void	ft_stack_add_front(t_stack *stack, t_node *new)
 {

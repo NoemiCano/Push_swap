@@ -6,11 +6,11 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 17:04:27 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/21 17:14:23 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 static void	ft_swap(t_stack *a)
 {

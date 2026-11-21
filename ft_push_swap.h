@@ -19,8 +19,8 @@
 typedef struct s_node	//nodo para cada valor
 {
 	int				value;	//valor de la posicion del stack
-	struct s_list	*next;	//proxima posicion del stack
-	struct s_list	*prev;	//posicion previa del stack
+	struct s_node	*next;	//proxima posicion del stack
+	struct s_node	*prev;	//posicion previa del stack
 }	t_node;
 
 typedef struct s_stack	//lista para cada stack

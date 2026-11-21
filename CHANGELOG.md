@@ -18,6 +18,12 @@
 
 ## 📅 Historial
 
+### `21/11/2026` · `19:12`
+**Commit:** `makefile and declaration fixes`
+
+- 🟣 Se corrigieron las declaraciones de estructuras, sustituyendo `t_list` por `t_node` donde correspondía.
+- 🟢 Makefile creado pero incompleto.
+
 ### `21/11/2026` · `16:06`
 **Commit:** `list declaration fix`
 
