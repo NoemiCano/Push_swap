@@ -1,14 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operators.c                                        :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/20 16:00:28 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/20 16:00:28 by frfaria          ###   ########.fr       */
+/*   Created: 2026/11/20 18:35:47 by frfaria           #+#    #+#             */
+/*   Updated: 2026/11/20 19:35:13 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	pa(t_stack *a, t_stack *b)
+{
+	if (!a || !b || !b->head)
+		return ;
+	ft_putstr_fd("pa\n", 1);
+	ft_stack_add_front(a, ft_detach_stack_head(b));
+}
+
+void	pb(t_stack *a, t_stack *b)
+{
+	if (!a || !b || !a->head)
+		return ;
+	ft_putstr_fd("pb\n", 1);
+	ft_stack_add_front(b, ft_detach_stack_head(a));
+}
