@@ -47,7 +47,10 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
-
+//TBD
 void	insertion(int arr, int size);
+
+//Funciones de ayuda !!BORRAR ANTES DE ENTREGA!!
+void	print_stacks(t_stack *a, t_stack *b);
 
 #endif

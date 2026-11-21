@@ -6,6 +6,9 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
 	   ft_stack_functions.c libft/ft_putstr_fd.c
 
+#!!Temporal, borrar despues!!
+SRCS += ft_print_stacks.c
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

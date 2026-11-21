@@ -18,6 +18,12 @@
 
 ## 📅 Historial
 
+### `21/11/2026` · `20:34`
+**Commit:** `print stacks added`
+
+- 🟢 Se añadió una función para imprimir el contenido de ambos stacks.
+- 🟡 Se añadió su declaración en un apartado propio del header y se incorporó el archivo al Makefile.
+
 ### `21/11/2026` · `19:12`
 **Commit:** `makefile and declaration fixes`
 
