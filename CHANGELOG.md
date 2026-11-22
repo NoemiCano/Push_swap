@@ -19,7 +19,7 @@
 ## 📅 Historial
 
 ### `22/11/2026` · `19:38`
-**Commit:** `add index assignment`
+**Commit:** `separate index assign into its own function`
 
 - 🟢 Added `ft_assign_index()` to assign each node an index based on its value's rank in the stack.
 - 🔵 Added the `index` field to `t_node`.
