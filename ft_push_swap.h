@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 10:32:03 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/22 17:20:02 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list	//lista para cada valor
 {
 	int				value;	//valor de la posicion del stack
+	int				index;
 	struct s_list	*next;	//proxima posicion del stack
 	struct s_list	*prev;	//posicion previa del stack
 }	t_list;
