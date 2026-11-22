@@ -19,6 +19,7 @@
 typedef struct s_node	//nodo para cada valor
 {
 	int				value;	//valor de la posicion del stack
+	int				index;	//Para asignarles posiciones de ordenación del stack
 	struct s_node	*next;	//proxima posicion del stack
 	struct s_node	*prev;	//posicion previa del stack
 }	t_node;
@@ -49,6 +50,7 @@ void	rrr(t_stack *a, t_stack *b);
 
 //TBD
 void	insertion(int arr, int size);
+void	ft_assign_index(t_stack *a);
 
 //Funciones de ayuda !!BORRAR ANTES DE ENTREGA!!
 void	print_stacks(t_stack *a, t_stack *b);

@@ -18,6 +18,14 @@
 
 ## 📅 Historial
 
+### `22/11/2026` · `19:38`
+**Commit:** `add index assignment`
+
+- 🟢 Added `ft_assign_index()` to assign each node an index based on its value's rank in the stack.
+- 🔵 Added the `index` field to `t_node`.
+- 🟣 Updated the Makefile to compile and include `ft_assign_index.c`.
+- 🟢 Tested index assignment with stacks containing 1, 2, and 100 values.
+
 ### `21/11/2026` · `20:47`
 **Commit:** `compacted print stacks`
 
