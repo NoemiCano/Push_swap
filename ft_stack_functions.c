@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_functions.c                                :+:      :+:    :+:   */
+/*   ft_stack_functions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 16:27:36 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 13:16:59 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/22 18:37:30 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 // Añade un elemento al inicio del stack. Es una lista circular
-void	ft_stack_add_front(t_stack *stack, t_list *new)
+void	ft_stack_add_front(t_stack *stack, t_node *new)
 {
 	if (!stack || !new)
 		return ;
@@ -35,7 +35,7 @@ void	ft_stack_add_front(t_stack *stack, t_list *new)
 }
 
 // Añade un elemento al final del stack. Es una lista circular
-void	ft_stack_add_back(t_stack *stack, t_list *new)
+void	ft_stack_add_back(t_stack *stack, t_node *new)
 {
 	if (!stack || !new)
 		return ;
@@ -56,9 +56,9 @@ void	ft_stack_add_back(t_stack *stack, t_list *new)
 }
 
 // Extrae el primer nodo del stack para que lo utilices en otro stack y, coloca el 2º elemento como head, reenganchando el resto de elementos. Es una lista circular.
-t_list	*ft_detach_stack_head(t_stack *stack) //devuelve la cabeza del stack y conecta el 2o elemento (y lo coloca como head) con el ultimo
+t_node	*ft_detach_stack_head(t_stack *stack) //devuelve la cabeza del stack y conecta el 2o elemento (y lo coloca como head) con el ultimo
 {
-	t_list	*tmp;
+	t_node	*tmp;
 
 	if (!stack || !stack->size) //verifica que sea un stack valido y que tenga contenidos
 		return (NULL);

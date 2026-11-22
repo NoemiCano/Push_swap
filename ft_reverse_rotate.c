@@ -6,20 +6,11 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 19:39:17 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 13:19:40 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/22 18:32:13 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-// (reverse rotate b): Desplaza hacia abajo todos los elementos del stack b una posición, convirtiendo el último elemento en el primero.
-void	rrb(t_stack *b)
-{
-	if (!b || b->size < 2)
-		return ;
-	ft_putstr_fd("rrb\n", 1);
-	b->head = b->head->prev; 
-}
 
 //  (reverse rotate a): Desplaza hacia abajo todos los elementos del stack a una posición, convirtiendo el último elemento en el primero.
 void	rra(t_stack *a)
@@ -28,6 +19,15 @@ void	rra(t_stack *a)
 		return ;
 	ft_putstr_fd("rra\n", 1);
 	a->head = a->head->prev; 
+}
+
+// (reverse rotate b): Desplaza hacia abajo todos los elementos del stack b una posición, convirtiendo el último elemento en el primero.
+void	rrb(t_stack *b)
+{
+	if (!b || b->size < 2)
+		return ;
+	ft_putstr_fd("rrb\n", 1);
+	b->head = b->head->prev; 
 }
 
 // rra y rrb a la vez.

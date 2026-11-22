@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 17:52:52 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/21 13:12:19 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/22 18:42:37 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 // Calcula el índice de deshorden entre 0 y 1.
 double compute_disorder(t_stack *stack)
 {
-	t_list	*current;
-	t_list	*runner;
+	t_node	*current;
+	t_node	*runner;
 	long	mistakes;
 	int		i;
 	int		j;

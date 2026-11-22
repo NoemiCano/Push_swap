@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 13:01:54 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/22 18:20:09 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/22 18:42:03 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	ft_square(int n)
 	return ((int)(i - 1));
 }
 // Calcular cuantos valores son mas pequeños
-static int count_smaller(t_list *start, int target_value)
+static int count_smaller(t_node *start, int target_value)
 {
-	t_list	*cmp;
+	t_node	*cmp;
 	int		smaller;
 
 	if (!start)
@@ -48,8 +48,8 @@ static int count_smaller(t_list *start, int target_value)
 // Asignar un índice al stack
 void	assign_index(t_stack *a)
 {
-	t_list	*start;
-	t_list	*current;
+	t_node	*start;
+	t_node	*current;
 
 	if (!a || !a->head || a->size <= 0)
 		return ;
@@ -67,8 +67,8 @@ void	assign_index(t_stack *a)
 // Comprobar si hay indices menores de un límite
 static int	has_index_below(t_stack *a, int limit)
 {
-	t_list	*start;
-	t_list	*current;
+	t_node	*start;
+	t_node	*current;
 
 	if (!a || !a->head || a->size <= 0)
 		return (0);
@@ -88,7 +88,7 @@ static int	has_index_below(t_stack *a, int limit)
 // Devuelve la posición del nodo con mayor index en 'b'
 static int	find_max_pos(t_stack *b)
 {
-	t_list	*curr;
+	t_node	*curr;
 	int		pos;
 	int		best_pos;
 	int		max_idx;
