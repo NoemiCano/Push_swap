@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 13:01:54 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/22 18:42:03 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/23 16:52:33 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,39 +48,37 @@ static int count_smaller(t_node *start, int target_value)
 // Asignar un índice al stack
 void	assign_index(t_stack *a)
 {
-	t_node	*start;
 	t_node	*current;
+	int		i;
 
 	if (!a || !a->head || a->size <= 0)
 		return ;
-	start = a->head;
-	current = start;
-	while (a)
+	current = a->head;
+	i = 0;
+	while (i < a->size && current)
 	{
-		current->index = count_smaller(start, current->value);
+		current->index = count_smaller(a->head, current->value);
 		current = current->next;
-		if (!current || current == start)
-			break ;
+		i++;
 	}
 }
 
 // Comprobar si hay indices menores de un límite
 static int	has_index_below(t_stack *a, int limit)
 {
-	t_node	*start;
 	t_node	*current;
+	int		i;
 
 	if (!a || !a->head || a->size <= 0)
 		return (0);
-	start = a->head;
-	current = start;
-	while (1)
+	current = a->head;
+	i = 0;
+	while (i < a->size && current)
 	{
 		if (current->index < limit)
 			return (1);
 		current = current->next;
-		if (!current || current == start)
-			break ;
+		i++;
 	}
 	return (0);
 }
