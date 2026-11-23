@@ -18,6 +18,12 @@
 
 ## 📅 Historial
 
+### `23/11/2026` · `20:54`
+**Commit:** `algoritmo simple (wip)`
+
+- 🟢 Se añade la estructura `t_cost` para almacenar los costes de movimientos del algoritmo simple.
+- 🔵 Se comienza a implementar el algoritmo simple, incluyendo el cálculo de precios y la búsqueda del movimiento más barato. (WIP)
+
 ### `22/11/2026` · `19:38`
 **Commit:** `separate index assign into its own function`
 

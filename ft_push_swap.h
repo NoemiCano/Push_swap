@@ -6,7 +6,7 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 17:04:28 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/23 21:31:41 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ typedef struct s_stack	//lista para cada stack
 	t_node	*head;		//apunta al primer elemento del stack
 	int		size;		//tamaño del stack
 }	t_stack;
+
+typedef struct s_cost //para calcular el coste en operaciones para mover nodos entre stacks (algoritmo simple)
+{
+	int	a;
+	int	b;
+	int	total;
+}	t_cost;
 
 //Stack manipulation functions
 void	ft_stack_add_front(t_stack *stack, t_node *new);
@@ -54,5 +61,6 @@ void	ft_assign_index(t_stack *a);
 
 //Funciones de ayuda !!BORRAR ANTES DE ENTREGA!!
 void	print_stacks(t_stack *a, t_stack *b);
+
 
 #endif
