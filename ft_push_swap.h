@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/22 18:41:35 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/23 16:57:21 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	rrr(t_stack *a, t_stack *b);
 
 //TBD
 void	insertion(int arr, int size);
+void	ft_assign_index(t_stack *a);
 
 //Funciones de ayuda !!BORRAR ANTES DE ENTREGA!!
 void	print_stacks(t_stack *a, t_stack *b);

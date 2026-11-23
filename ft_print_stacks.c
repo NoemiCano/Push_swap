@@ -6,7 +6,7 @@
 /*   By: frfaria <frfaria@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 20:15:40 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 20:32:20 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/22 16:11:25 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void print_stack(t_stack *a, char name)
 		printf("%d, ", tmp->value);
 		tmp = tmp->next;
 	}
-	printf("%d}\n", a->head->prev->value);
+	printf("%d} (%d)\n", a->head->prev->value, a->size);
 
 }
 
