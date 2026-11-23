@@ -4,8 +4,19 @@ NAME = pushlib.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
-	   ft_stack_functions.c libft/ft_putstr_fd.c ft_assign_index.c
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+SRCS =	ft_push.c \
+		ft_swap.c \
+		ft_rotate.c \
+		ft_reverse_rotate.c \
+		ft_stack_functions.c \
+		libft/ft_putstr_fd.c \
+		ft_assign_index.c \
+		disorder_index.c \
+		insertion.c \
+		intermediate.c
 
 #!!Temporal, borrar despues!!
 SRCS += ft_print_stacks.c
@@ -14,19 +25,22 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+
+$(NAME): $(LIBFT) $(OBJS)
+	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c ft_push_swap.h libft/libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-libft/%.o: libft/%.c libft/libft.h
+%.o: %.c ft_push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	@make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
-fclean: clean
+fclean:
+	@make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all
