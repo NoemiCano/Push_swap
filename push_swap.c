@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:16:32 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/24 16:17:36 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:56:07 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,4 @@ int main(int argc, char *argv[])
 // OK - Si algo falla, se libera lo que se haya reservado, se imprime Error\n por stderr y se devuelve un código distinto de cero. 
 // Si todo va bien, se asignan índices y se llama al algoritmo.
 // Se liberan los stacks al terminar.
+// Benchmark
