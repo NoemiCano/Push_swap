@@ -6,14 +6,14 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 13:01:54 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/23 16:52:33 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/24 13:47:32 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 // Calcular el tamaño del chunk que sería la raiz cuadrada del número de elementos que hay en 'a'
-int	ft_square(int n)
+static int	ft_square(int n)
 {
 	long	i;
 
@@ -23,44 +23,6 @@ int	ft_square(int n)
 	while (i * i <= (long)n)
 		i++;
 	return ((int)(i - 1));
-}
-// Calcular cuantos valores son mas pequeños
-static int count_smaller(t_node *start, int target_value)
-{
-	t_node	*cmp;
-	int		smaller;
-
-	if (!start)
-		return (0);
-	smaller = 0;
-	cmp = start;
-	while (1)
-	{
-		if (cmp->value < target_value)
-			smaller++;
-		cmp = cmp->next;
-		if (!cmp || cmp == start)
-			break ;
-	}
-	return (smaller);
-}
-
-// Asignar un índice al stack
-void	assign_index(t_stack *a)
-{
-	t_node	*current;
-	int		i;
-
-	if (!a || !a->head || a->size <= 0)
-		return ;
-	current = a->head;
-	i = 0;
-	while (i < a->size && current)
-	{
-		current->index = count_smaller(a->head, current->value);
-		current = current->next;
-		i++;
-	}
 }
 
 // Comprobar si hay indices menores de un límite
@@ -109,7 +71,7 @@ static int	find_max_pos(t_stack *b)
 }
 
 // Pasar elementos de 'a' a 'b'
-size_t pass_a_to_b(t_stack *a, t_stack *b, int size_chunk)
+static size_t pass_a_to_b(t_stack *a, t_stack *b, int size_chunk)
 {
 	size_t	movements;
 	int		i;
@@ -136,7 +98,7 @@ size_t pass_a_to_b(t_stack *a, t_stack *b, int size_chunk)
 }
 
 // Pasar elementos de 'b' a 'a'
-size_t pass_b_to_a(t_stack *a, t_stack *b)
+static size_t pass_b_to_a(t_stack *a, t_stack *b)
 {
 	size_t	movements;
 	int		pos;
@@ -171,7 +133,6 @@ size_t dynamic_chunk(t_stack *a, t_stack *b)
 	movements = 0;
 	if (!a || a->size <= 0)
 		return (0);
-	assign_index(a);	// Asignar un índice al stack
 	size_chunk = ft_square(a->size);	// Calcular el tamaño del chunk
 	movements += pass_a_to_b(a, b, size_chunk);	// Mover elementos de 'a' a 'b'
 	movements += pass_b_to_a(a, b); // Mover elementos de 'b' a 'a'

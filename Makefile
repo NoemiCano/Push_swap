@@ -12,11 +12,12 @@ SRCS =	ft_push.c \
 		ft_rotate.c \
 		ft_reverse_rotate.c \
 		ft_stack_functions.c \
-		libft/ft_putstr_fd.c \
-		ft_assign_index.c \
 		disorder_index.c \
 		insertion.c \
-		intermediate.c
+		intermediate.c \
+		parse_input.c \
+		push_swap.c \
+		utils.c
 
 #!!Temporal, borrar despues!!
 SRCS += ft_print_stacks.c
