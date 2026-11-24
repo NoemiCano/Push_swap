@@ -1,5 +1,5 @@
 #Nombre temporal para manejarlo mas comodamente
-NAME = pushlib.a
+NAME = push_swap.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

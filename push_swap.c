@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:16:32 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/24 13:44:27 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/24 16:17:36 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	// Rellenar el stack 'a'
-	a.head = NULL;
-	a.size = 0;
+	a = (t_stack){NULL, 0}; // asi se puede inicializar
 	if (!parse_input(argc, argv, &a))
 	{
 		free_stack(&a);
