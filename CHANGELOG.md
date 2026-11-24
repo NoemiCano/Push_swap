@@ -18,6 +18,16 @@
 
 ## 📅 Historial
 
+
+### `24/11/2026` · `02:16`
+**Commit:** `advances on simple`
+
+- 🔵 Se cambia el tipo de `t_cost.total` de `int` a `size_t`.
+- 🟢 Se implementa `ft_sort3()` para ordenar los tres elementos restantes de A.
+- 🟢 Se añade `find_target()` para encontrar el objetivo de inserción de cada nodo de B en A.
+- 🟢 Se añade `no_target()` para localizar el nodo de menor índice cuando no existe un objetivo de inserción válido.
+- 🟢 Se comienza a implementar `ft_price()` y `ft_find_cheapest()` para calcular los costes de movimiento y seleccionar el movimiento más barato. (WIP)
+
 ### `23/11/2026` · `20:54`
 **Commit:** `algoritmo simple (wip)`
 

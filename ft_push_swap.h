@@ -32,9 +32,9 @@ typedef struct s_stack	//lista para cada stack
 
 typedef struct s_cost //para calcular el coste en operaciones para mover nodos entre stacks (algoritmo simple)
 {
-	int	a;
-	int	b;
-	int	total;
+	int		a;
+	int		b;
+	size_t	total;
 }	t_cost;
 
 //Stack manipulation functions
