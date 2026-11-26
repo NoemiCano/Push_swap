@@ -18,6 +18,13 @@
 
 ## 📅 Historial
 
+### `27/11/2026` · `00:35`
+**Commit:** `Implement and validate Turk Sort`
+
+- 🟢 Implementación completa del algoritmo Turk Sort para ordenar los elementos de A utilizando B como stack auxiliar.
+- 🔵 Implementación del cálculo de costes para encontrar la inserción más eficiente, aprovechando rotaciones simultáneas (`rr` y `rrr`).
+- 🟡 Implementación de la rotación final para dejar el menor índice en la cima de A.
+- ⚪ Validación con 1.000 números aleatorios mediante `checker_linux`: resultado `OK`, con 14.047 operaciones.
 
 ### `24/11/2026` · `02:16`
 **Commit:** `advances on simple`

@@ -55,6 +55,11 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
+//Simple sort
+size_t	ft_simple_sort(t_stack *a, t_stack *b);
+size_t	ft_sort3(t_stack *a);
+t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
+
 //TBD
 void	insertion(int arr, int size);
 void	ft_assign_index(t_stack *a);
