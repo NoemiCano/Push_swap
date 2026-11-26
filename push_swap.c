@@ -3,46 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:16:32 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/24 18:56:07 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/26 17:48:10 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_push_swap.h"
 
+static int check_flags(int argc, char **argv, t_flag *flag, int *start_index)
+{
+	int	i;
+	int number_strat;
+	
+	i = 1;
+	number_strat = 0;
+	*flag = (t_flag){ADAPTIVE, 0};
+	while (i < argc && argv[i][0] == '-' && argv[i][1] == '-')
+	{
+		if (ft_strcmp(argv[i], "--bench") == 0)
+			flag->bench = 1;
+		if ((ft_strcmp(argv[i], "--simple") == 00) && number_strat == 0)
+		{
+			flag->strategy = SIMPLE;
+			number_strat = 1;
+		}
+		else if ((ft_strcmp(argv[i], "--medium") == 00) && number_strat == 0)
+		{
+			flag->strategy = MEDIUM;
+			number_strat = 1;
+		}
+		else if ((ft_strcmp(argv[i], "--complex") == 00) && number_strat == 0)
+		{
+			flag->strategy = COMPLEX;
+			number_strat = 1;
+		}
+		else if ((ft_strcmp(argv[i], "--adaptive") == 00) && number_strat == 0)
+		{
+			flag->strategy = ADAPTIVE;
+			number_strat = 1;
+		}
+		else
+			return (0);
+		i++;
+	}
+	*start_index = i;
+	return (1);
+}
+
 int main(int argc, char *argv[])
 {
-	t_stack a;
-	t_stack b;
+	t_stack	a;
+	t_stack	b;
+	t_flag	flag;
 	double disorder_index;
+	int	i;
 
 	if (argc == 1)
 		return (0);
-	// Rellenar el stack 'a'
-	a = (t_stack){NULL, 0}; // asi se puede inicializar
-	if (!parse_input(argc, argv, &a))
+	if (!check_flags(argc, argv, &flag, &i)) 	// Revisar flags
+		return (write_error(), 1);
+	a = (t_stack){NULL, 0};		// Rellenar el stack 'a'
+	if (!parse_input(argc, argv, &a)) // Me va a faltar pasarle la posición del index para que sepa donde van los números...
 	{
 		free_stack(&a);
 		write_error();
 		return (1);
 	}
-	// Asignar un índice a las posiciones
-	ft_assign_index(&a);
+	ft_assign_index(&a);	// Asignar un índice a las posiciones
+	disorder_index = compute_disorder(&a);	// Asignar el índice de deshorden
 
-	// Asignar el índice de deshorden
-	disorder_index = compute_disorder(&a);
-
-	
-	// Recibira el stack a con una lista de enteros
-	// Un selector de estrategia (opcional)
-	
-	// OK - 1. Comprobar que recibimos minimo dos argumentos
-	// OK - 2. Comprobar que el stack no viene vacio
-	// OK - 3. Si no se especifican parámetros, no mostrar nada y devolver el control al usuario
-	// OK - 4. En caso de error, deberá mostrar “Error” seguido de un \n en la salida de error estándar. Algunos de los posibles errores son, por ejemplo: argumentos que no son enteros, argumentos superiores a un número entero, y/o números duplicados.
-	// OK - 5. Asignar un indice de desorden.
+	// Llamar al algoritmo correspondiente
+	// Ejecutar el benchark si corresponde
+	// Liberar los stacks
 }
 
 // main inicializa A y B vacíos. 

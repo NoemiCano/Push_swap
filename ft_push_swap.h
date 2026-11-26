@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/24 13:49:11 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/26 16:30:50 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,21 @@ typedef struct s_stack	//lista para cada stack
 	t_node	*head;		//apunta al primer elemento del stack
 	int		size;		//tamaño del stack
 }	t_stack;
+
+typedef enum	e_strategy
+{
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+}	t_strategy;
+
+typedef struct s_flag
+{
+	t_strategy	strategy;
+	int			bench;
+}	t_flag;
+
 
 //Stack manipulation functions
 void	ft_stack_add_front(t_stack *stack, t_node *new);
