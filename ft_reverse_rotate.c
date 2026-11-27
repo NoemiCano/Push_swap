@@ -40,5 +40,5 @@ size_t	rrr(t_stack *a, t_stack *b)
 		a->head = a->head->prev; 
 	if (b->size >= 2)
 		b->head = b->head->prev; 
-	return (2);
+	return (1);
 }
