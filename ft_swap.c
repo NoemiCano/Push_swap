@@ -32,31 +32,38 @@ static void	ft_swap(t_stack *a)
 	tmp2->prev = tmp->prev;		//prev del 2o se asigna al ultimo
 	tmp->prev = tmp2;			//previo del primero se asigna al segundo
 	a->head = tmp2;				//head se asigna al segundo, convirtiendolo en el nuevo primero
+	return (1);
 }
 
-void	sa(t_stack *a)
+size_t	sa(t_stack *a)
 {
 	if (!a || a->size < 2)
 		return ;
 	ft_putstr_fd("sa\n", 1);
 	ft_swap(a);
+	return (1);
 }
 
-void	sb(t_stack *b)
+size_t	sb(t_stack *b)
 {
 	if (!b || b->size < 2)
 		return ;
 	ft_putstr_fd("sb\n", 1);
 	ft_swap(b);
+	return (1);
 }
 
-void	ss(t_stack *a, t_stack *b)
+size_t	ss(t_stack *a, t_stack *b)
 {
+	size_t	c;
+
+	c = 0;
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
-		return ;
+		return (c);
 	ft_putstr_fd("ss\n", 1);
 	if (a->size >= 2)
-		ft_swap(a);
+		c += ft_swap(a);
 	if (b->size >= 2)
-		ft_swap(b);
+		c += ft_swap(b);
+	return (c);
 }

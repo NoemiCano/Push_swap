@@ -6,7 +6,7 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/23 21:31:41 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/27 18:47:03 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ void	ft_stack_add_back(t_stack *stack, t_node *new);
 t_node	*ft_detach_stack_head(t_stack *stack); 
 
 //Operators
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+size_t	pa(t_stack *a, t_stack *b);
+size_t	pb(t_stack *a, t_stack *b);
+size_t	sa(t_stack *a);
+size_t	sb(t_stack *b);
+size_t	ss(t_stack *a, t_stack *b);
+size_t	ra(t_stack *a);
+size_t	rb(t_stack *b);
+size_t	rr(t_stack *a, t_stack *b);
+size_t	rra(t_stack *a);
+size_t	rrb(t_stack *b);
+size_t	rrr(t_stack *a, t_stack *b);
 
 //Simple sort
 size_t	ft_simple_sort(t_stack *a, t_stack *b);

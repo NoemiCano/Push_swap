@@ -18,6 +18,11 @@
 
 ## 📅 Historial
 
+### `27/11/2026` · `18:48`
+**Commit:** `changed operator return type`
+
+- 🟢 Se cambió el tipo de retorno de todos los operadores de Push_swap de `void` a `size_t`.
+
 ### `27/11/2026` · `00:35`
 **Commit:** `Implement and validate Turk Sort`
 
