@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef FT_PUSH_SWAP_H
+# define FT_PUSH_SWAP_H
 
 # include "libft/libft.h"
 # include <stddef.h> // Es para incluir NULL y size_t
-	
-typedef struct s_node	//nodo para cada valor
+
+typedef struct s_node //nodo para cada valor
 {
 	int				value;	//valor de la posicion del stack
 	int				index;	//Para asignarles posiciones de ordenación del stack
@@ -24,7 +24,7 @@ typedef struct s_node	//nodo para cada valor
 	struct s_node	*prev;	//posicion previa del stack
 }	t_node;
 
-typedef struct s_stack	//lista para cada stack
+typedef struct s_stack //lista para cada stack
 {
 	t_node	*head;		//apunta al primer elemento del stack
 	int		size;		//tamaño del stack
@@ -40,7 +40,7 @@ typedef struct s_cost //para calcular el coste en operaciones para mover nodos e
 //Stack manipulation functions
 void	ft_stack_add_front(t_stack *stack, t_node *new);
 void	ft_stack_add_back(t_stack *stack, t_node *new);
-t_node	*ft_detach_stack_head(t_stack *stack); 
+t_node	*ft_detach_stack_head(t_stack *stack);
 
 //Operators
 size_t	pa(t_stack *a, t_stack *b);
@@ -66,6 +66,5 @@ void	ft_assign_index(t_stack *a);
 
 //Funciones de ayuda !!BORRAR ANTES DE ENTREGA!!
 void	print_stacks(t_stack *a, t_stack *b);
-
 
 #endif

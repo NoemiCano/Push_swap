@@ -17,7 +17,7 @@ size_t	rra(t_stack *a)
 	if (!a || a->size < 2)
 		return ;
 	ft_putstr_fd("rra\n", 1);
-	a->head = a->head->prev; 
+	a->head = a->head->prev;
 	return (1);
 }
 
@@ -26,7 +26,7 @@ size_t	rrb(t_stack *b)
 	if (!b || b->size < 2)
 		return ;
 	ft_putstr_fd("rrb\n", 1);
-	b->head = b->head->prev; 
+	b->head = b->head->prev;
 	return (1);
 }
 
@@ -34,11 +34,11 @@ size_t	rrr(t_stack *a, t_stack *b)
 {
 	if (!a || !b)
 		return ;
-	if (a->size >= 2 || b->size >=2)	//verifica que alguno pueda rotar para imprimir
+	if (a->size >= 2 || b->size >= 2)
 		ft_putstr_fd("rrr\n", 1);
 	if (a->size >= 2)
-		a->head = a->head->prev; 
+		a->head = a->head->prev;
 	if (b->size >= 2)
-		b->head = b->head->prev; 
+		b->head = b->head->prev;
 	return (1);
 }

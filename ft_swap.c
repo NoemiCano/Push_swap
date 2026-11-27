@@ -6,7 +6,7 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 17:14:23 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/27 19:08:46 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	ft_swap(t_stack *a)
 	}
 	tmp = a->head;				//valores temporales para hacer el cambio
 	tmp2 = a->head->next;
-
 	a->head->prev->next = tmp2;	//el next del ultimo elemento es asignado al 2o elm
 	tmp2->next->prev = tmp;		//el prev del 3er elemento es asignado al primer elemento (que sera colocado en 2a pos)
 	tmp->next = tmp2->next;		//next del primero se asigna al 3o
