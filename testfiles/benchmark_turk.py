@@ -17,9 +17,9 @@ import subprocess
 from pathlib import Path
 from statistics import mean, median
 
-EXECUTABLE = "./a.out"
+EXECUTABLE = "./turk_test"
 RUNS = 1000
-SIZES = (100, 500)
+SIZES = (500,)
 SEED = 42
 
 OPERATIONS = {

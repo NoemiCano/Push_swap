@@ -60,6 +60,9 @@ size_t	ft_simple_sort(t_stack *a, t_stack *b);
 size_t	ft_sort3(t_stack *a);
 t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
 
+//complex sort
+size_t	ft_complex_sort(t_stack *a, t_stack *b);
+
 //TBD
 void	insertion(int arr, int size);
 void	ft_assign_index(t_stack *a);

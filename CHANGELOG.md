@@ -18,6 +18,15 @@
 
 ## 📅 Historial
 
+### `28/11/2026` · `00:01`
+**Commit:** `complex sort implemented and working`
+
+- 🟢 Añadido el algoritmo **Binary LSD Radix Sort** como implementación de `ft_complex_sort()`.
+- 🔵 Implementado el procesamiento de bits desde el menos significativo (LSB) hasta el más significativo (MSB), utilizando los índices normalizados de los nodos.
+- 🔵 Implementada la distribución de elementos mediante `pb` para bits `0` y `ra` para bits `1`, restaurando los elementos de B a A mediante `pa` al finalizar cada iteración.
+- 🟣 Verificado el funcionamiento con valores positivos y negativos, comprobando que las pilas terminan correctamente ordenadas.
+- 🟢 Resultados de referencia: **1.084 operaciones para 100 elementos** y **6.784 operaciones para 500 elementos**.
+
 ### `27/11/2026` · `18:48`
 **Commit:** `changed operator return type`
 
