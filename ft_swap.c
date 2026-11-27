@@ -36,7 +36,7 @@ static void	ft_swap(t_stack *a)
 size_t	sa(t_stack *a)
 {
 	if (!a || a->size < 2)
-		return ;
+		return (0);
 	ft_putstr_fd("sa\n", 1);
 	ft_swap(a);
 	return (1);
@@ -45,7 +45,7 @@ size_t	sa(t_stack *a)
 size_t	sb(t_stack *b)
 {
 	if (!b || b->size < 2)
-		return ;
+		return (0);
 	ft_putstr_fd("sb\n", 1);
 	ft_swap(b);
 	return (1);
@@ -54,7 +54,7 @@ size_t	sb(t_stack *b)
 size_t	ss(t_stack *a, t_stack *b)
 {
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
-		return (1);
+		return (0);
 	ft_putstr_fd("ss\n", 1);
 	if (a->size >= 2)
 		ft_swap(a);

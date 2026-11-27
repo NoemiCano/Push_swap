@@ -15,7 +15,7 @@
 size_t	ra(t_stack *a)
 {
 	if (!a || a->size < 2)
-		return ;
+		return (0);
 	ft_putstr_fd("ra\n", 1);
 	a->head = a->head->next;
 	return (1);
@@ -24,7 +24,7 @@ size_t	ra(t_stack *a)
 size_t	rb(t_stack *b)
 {
 	if (!b || b->size < 2)
-		return ;
+		return (0);
 	ft_putstr_fd("rb\n", 1);
 	b->head = b->head->next;
 	return (1);
@@ -33,7 +33,7 @@ size_t	rb(t_stack *b)
 size_t	rr(t_stack *a, t_stack *b)
 {
 	if (!a || !b)
-		return ;
+		return (0);
 	if (a->size >= 2 || b->size >= 2)
 		ft_putstr_fd("rr\n", 1);
 	if (a->size >= 2)
