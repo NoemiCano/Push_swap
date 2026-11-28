@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void	ft_iterate_bit(t_stack *a, t_stack *b, size_t bit, t_ops *ops)
+static void	ft_iterate_bit(t_stack *a, t_stack *b, size_t bit, t_ops *ops)
 {
 	int		i;
 
@@ -34,5 +34,5 @@ void	ft_complex_sort(t_stack *a, t_stack *b, t_ops *ops)
 
 	bit = 0;
 	while ((a->size - 1) >> bit)
-		ft_iterate_bit(a, b, bit++);
+		ft_iterate_bit(a, b, bit++, ops);
 }

@@ -7,17 +7,12 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS =	ft_push.c \
-		ft_swap.c \
-		ft_rotate.c \
-		ft_reverse_rotate.c \
+SRCS =	ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
 		ft_stack_functions.c \
-		disorder_index.c \
-		intermediate.c \
-		parse_input.c \
+		parse_input.c utils.c \
 		push_swap.c \
-		utils.c \
 		simple.c simple_utils.c \
+		intermediate.c \
 		complex.c
 
 #!!Temporal, borrar despues!!
