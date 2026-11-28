@@ -6,31 +6,33 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 19:39:17 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/21 17:14:23 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/28 16:55:18 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-size_t	rra(t_stack *a)
+void	rra(t_stack *a, t_ops *ops)
 {
 	if (!a || a->size < 2)
 		return (0);
 	ft_putstr_fd("rra\n", 1);
 	a->head = a->head->prev;
-	return (1);
+	*rra++;
+	*total++;
 }
 
-size_t	rrb(t_stack *b)
+void	rrb(t_stack *b, t_ops *ops)
 {
 	if (!b || b->size < 2)
 		return (0);
 	ft_putstr_fd("rrb\n", 1);
 	b->head = b->head->prev;
-	return (1);
+	*rrb++;
+	*total++;
 }
 
-size_t	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b)
 		return (0);
@@ -40,5 +42,6 @@ size_t	rrr(t_stack *a, t_stack *b)
 		a->head = a->head->prev;
 	if (b->size >= 2)
 		b->head = b->head->prev;
-	return (1);
+	*rrr++;
+	*total++;
 }

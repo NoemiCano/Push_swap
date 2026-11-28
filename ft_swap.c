@@ -6,7 +6,7 @@
 /*   By: frfaria <frfaria@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/27 19:08:46 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/28 16:52:03 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,27 @@ static void	ft_swap(t_stack *a)
 	a->head = tmp2;				//head se asigna al segundo, convirtiendolo en el nuevo primero
 }
 
-size_t	sa(t_stack *a)
+void	sa(t_stack *a, t_ops *ops)
 {
 	if (!a || a->size < 2)
 		return (0);
 	ft_putstr_fd("sa\n", 1);
 	ft_swap(a);
-	return (1);
+	*sa++;
+	*total++;
 }
 
-size_t	sb(t_stack *b)
+void	sb(t_stack *b, t_ops *ops)
 {
 	if (!b || b->size < 2)
 		return (0);
 	ft_putstr_fd("sb\n", 1);
 	ft_swap(b);
-	return (1);
+	*sb++;
+	*total++;
 }
 
-size_t	ss(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
 		return (0);
@@ -60,5 +62,6 @@ size_t	ss(t_stack *a, t_stack *b)
 		ft_swap(a);
 	if (b->size >= 2)
 		ft_swap(b);
-	return (1);
+	*ss++;
+	*total++;
 }

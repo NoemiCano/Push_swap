@@ -12,25 +12,27 @@
 
 #include "ft_push_swap.h"
 
-size_t	ra(t_stack *a)
+void	ra(t_stack *a, t_ops *ops)
 {
 	if (!a || a->size < 2)
 		return (0);
 	ft_putstr_fd("ra\n", 1);
 	a->head = a->head->next;
-	return (1);
+	*ra++;
+	*total++;
 }
 
-size_t	rb(t_stack *b)
+void	rb(t_stack *b, t_ops *ops)
 {
 	if (!b || b->size < 2)
 		return (0);
 	ft_putstr_fd("rb\n", 1);
 	b->head = b->head->next;
-	return (1);
+	*rb++;
+	*total++;
 }
 
-size_t	rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b)
 		return (0);
@@ -40,5 +42,6 @@ size_t	rr(t_stack *a, t_stack *b)
 		a->head = a->head->next;
 	if (b->size >= 2)
 		b->head = b->head->next;
-	return (1);
+	*rr++;
+	*total++;
 }

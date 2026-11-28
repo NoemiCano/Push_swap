@@ -12,20 +12,22 @@
 
 #include "ft_push_swap.h"
 
-size_t	pa(t_stack *a, t_stack *b)
+void	pa(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || !b->head)
 		return (0);
 	ft_putstr_fd("pa\n", 1);
 	ft_stack_add_front(a, ft_detach_stack_head(b));
-	return (1);
+	*pa++;
+	*total++;
 }
 
-size_t	pb(t_stack *a, t_stack *b)
+void	pb(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || !a->head)
 		return (0);
 	ft_putstr_fd("pb\n", 1);
 	ft_stack_add_front(b, ft_detach_stack_head(a));
-	return (1);
+	*pb++;
+	*total++;
 }
