@@ -88,8 +88,8 @@ void	rrb(t_stack *b, t_ops *ops);
 void	rrr(t_stack *a, t_stack *b, t_ops *ops);
 
 //Simple sort
-void	ft_simple_sort(t_stack *a, t_stack *b);
-void	ft_sort3(t_stack *a);
+void	ft_simple_sort(t_stack *a, t_stack *b, t_ops *ops);
+void	ft_sort3(t_stack *a, t_ops *ops);
 t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
 
 //complex sort
