@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 13:01:54 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/28 16:37:27 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 17:51:20 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void dynamic_chunk(t_stack *a, t_stack *b, t_ops *op)
 	int		size_chunk;
 
 	if (!a || a->size <= 0)
-		return (0);
+		return ;
 	size_chunk = ft_square(a->size);	// Calcular el tamaño del chunk
 	pass_a_to_b(a, b, size_chunk, op);	// Mover elementos de 'a' a 'b'
 	pass_b_to_a(a, b, op); // Mover elementos de 'b' a 'a'

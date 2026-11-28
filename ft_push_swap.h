@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 16:48:05 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 17:20:11 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ int		parse_input(int argc, char **argv, t_stack *stack, int index);
 void	free_stack(t_stack *stack);
 void	write_error(void);
 void	adaptive(t_stack *a, t_stack *b, t_ops *op, double disorder_index);
+
+int	main(int argc, char *argv[]);
 
 #endif
