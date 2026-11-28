@@ -78,7 +78,7 @@ static void pass_a_to_b(t_stack *a, t_stack *b, int size_chunk, t_ops *op)
 
 	i = 1;
 	if (!a || !b || size_chunk <= 0)
-		return (0);
+		return ;
 	while (a->size > 0 && a->head)
 	{
 		limit = size_chunk * i;
@@ -99,7 +99,7 @@ static void pass_b_to_a(t_stack *a, t_stack *b, t_ops *op)
 	int		pos;
 
 	if (!a || !b)
-		return (0);
+		return ;
 	while (b->size > 0 && b->head)
 	{
 		pos = find_max_pos(b);

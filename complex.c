@@ -3,42 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   complex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/27 23:08:22 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/27 23:08:22 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/28 18:05:40 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-size_t	ft_iterate_bit(t_stack *a, t_stack *b, size_t bit)
+static void	ft_iterate_bit(t_stack *a, t_stack *b, size_t bit, t_ops *ops)
 {
-	size_t	c;
 	int		i;
 
-	c = 0;
 	i = a->size;
 	while (i--)
 	{
 		if ((a->head->index >> bit) & 1)
-			c += ra(a);
+			ra(a, ops);
 		else
-			c += pb(a, b);
+			pb(a, b, ops);
 	}
 	while (b->size)
-		c += pa(a, b);
-	return (c);
+		pa(a, b, ops);
 }
 
-size_t	ft_complex_sort(t_stack *a, t_stack *b)
+void	ft_complex_sort(t_stack *a, t_stack *b, t_ops *ops)
 {
-	size_t	c;
 	size_t	bit;
 
-	c = 0;
 	bit = 0;
 	while ((a->size - 1) >> bit)
-		c += ft_iterate_bit(a, b, bit++);
-	return (c);
+		ft_iterate_bit(a, b, bit++, ops);
 }

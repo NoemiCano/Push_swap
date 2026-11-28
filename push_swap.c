@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:16:32 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/28 17:02:41 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 18:01:18 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ static void call_benchmark(t_flag *flag, t_ops *op, double disorder_index)
 // Llamar al algoritmo correspondiente
 static void call_algorithm(t_stack *a, t_stack *b, t_flag *flag, double disorder_index)
 {
-	t_ops op;
+	t_ops *op;
 
-	op = (t_ops){0};
+	*op = (t_ops){0};
 	if (flag->strategy == "SIMPLE")
-		ft_simple_sort(&a, &b, &op);
+		ft_simple_sort(a, b, op);
 	else if (flag->strategy == "MEDIUM")
-		dynamic_chunk(&a, &b, &op);
+		dynamic_chunk(a, b, op);
 	else if (flag->strategy == "COMPLEX")
-		ft_complex_sort(&a, &b, &op);
+		ft_complex_sort(a, b, op);
 	else if (flag->strategy == "ADAPTIVE")
-		adaptive(&a, &b, &op, disorder_index);
+		adaptive(a, b, &op, disorder_index);
 	if (flag->bench == 1)
 		call_benchmark(flag, &op, disorder_index);
 	free_stack(&op);

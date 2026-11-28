@@ -12,30 +12,27 @@
 
 #include "ft_push_swap.h"
 
-size_t	ft_sort3(t_stack *a)
+void	ft_sort3(t_stack *a, t_ops *ops)
 {
 	t_node	*tmp;
-	size_t	ops;
 
-	ops = 0;
 	tmp = a->head;
 	if (tmp->index < tmp->next->index && tmp->next->index < tmp->prev->index) // 0 1 2 (return)
-		return (ops);
+		return ;
 	if (tmp->index < tmp->next->index && tmp->index < tmp->prev->index) // 0 2 1 -> 2 0 1
-		(sa(a), ops++);
+		sa(a, ops);
 	else if (tmp->index > tmp->next->index && tmp->index < tmp->prev->index) // 1 0 2 -> 0 1 2
-		(sa(a), ops++);
+		sa(a, ops);
 	else if (tmp->index > tmp->next->index
 		&& tmp->next->index > tmp->prev->index) // 2 1 0 -> 1 2 0
-		(sa(a), ops++);
+		sa(a, ops);
 	if (a->head->prev->index < a->head->next->index) // 1 2 0 -> 0 1 2
-		(rra(a), ops++);
+		rra(a, ops);
 	else if (a->head->index > a->head->next->index) // 2 0 1 -> 0 1 2
-		(ra(a), ops++);
-	return (ops);
+		ra(a, ops);
 }
 
-int	no_target(t_stack *a, t_cost *new, t_node *small)
+static int	no_target(t_stack *a, t_cost *new, t_node *small)
 {
 	t_node	*node_a;
 
@@ -49,7 +46,7 @@ int	no_target(t_stack *a, t_cost *new, t_node *small)
 	return (new->a);
 }
 
-int	find_target(t_stack *a, t_stack *b, t_node *node_b, t_cost *new)
+static int	find_target(t_stack *a, t_stack *b, t_node *node_b, t_cost *new)
 {
 	t_node	*node_a;
 	t_node	target;
@@ -75,7 +72,7 @@ int	find_target(t_stack *a, t_stack *b, t_node *node_b, t_cost *new)
 	return (target.value);
 }
 
-t_cost	ft_calc_cost(t_stack *a, t_stack *b, t_cost *new)
+static t_cost	ft_calc_cost(t_stack *a, t_stack *b, t_cost *new)
 {
 	t_cost	tmp;
 	t_cost	best;

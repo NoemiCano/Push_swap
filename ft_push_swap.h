@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 17:20:11 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 18:03:37 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,25 +75,25 @@ void	ft_stack_add_back(t_stack *stack, t_node *new);
 t_node	*ft_detach_stack_head(t_stack *stack);
 
 //Operators
-size_t	pa(t_stack *a, t_stack *b);
-size_t	pb(t_stack *a, t_stack *b);
-size_t	sa(t_stack *a);
-size_t	sb(t_stack *b);
-size_t	ss(t_stack *a, t_stack *b);
-size_t	ra(t_stack *a);
-size_t	rb(t_stack *b);
-size_t	rr(t_stack *a, t_stack *b);
-size_t	rra(t_stack *a);
-size_t	rrb(t_stack *b);
-size_t	rrr(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b, t_ops *ops);
+void	pb(t_stack *a, t_stack *b, t_ops *ops);
+void	sa(t_stack *a, t_ops *ops);
+void	sb(t_stack *b, t_ops *ops);
+void	ss(t_stack *a, t_stack *b, t_ops *ops);
+void	ra(t_stack *a, t_ops *ops);
+void	rb(t_stack *b, t_ops *ops);
+void	rr(t_stack *a, t_stack *b, t_ops *ops);
+void	rra(t_stack *a, t_ops *ops);
+void	rrb(t_stack *b, t_ops *ops);
+void	rrr(t_stack *a, t_stack *b, t_ops *ops);
 
 //Simple sort
-size_t	ft_simple_sort(t_stack *a, t_stack *b);
-size_t	ft_sort3(t_stack *a);
+void	ft_simple_sort(t_stack *a, t_stack *b, t_ops *ops);
+void	ft_sort3(t_stack *a, t_ops *ops);
 t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
 
 //complex sort
-size_t	ft_complex_sort(t_stack *a, t_stack *b);
+void	ft_complex_sort(t_stack *a, t_stack *b, t_ops *ops);
 
 //TBD
 void	insertion(int arr, int size);
@@ -106,7 +106,7 @@ void	print_stacks(t_stack *a, t_stack *b);
 // Funciones
 int		main(int argc, char *argv[]);
 double	compute_disorder(t_stack *stack);
-size_t	dynamic_chunk(t_stack *a, t_stack *b);
+void	dynamic_chunk(t_stack *a, t_stack *b, t_ops *op);
 int		parse_input(int argc, char **argv, t_stack *stack, int index);
 void	free_stack(t_stack *stack);
 void	write_error(void);
