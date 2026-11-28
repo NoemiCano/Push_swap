@@ -13,7 +13,6 @@ SRCS =	ft_push.c \
 		ft_reverse_rotate.c \
 		ft_stack_functions.c \
 		disorder_index.c \
-		insertion.c \
 		intermediate.c \
 		parse_input.c \
 		push_swap.c \
@@ -42,7 +41,7 @@ clean:
 	@make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
-fclean:
+fclean: clean
 	@make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 

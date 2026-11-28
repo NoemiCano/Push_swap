@@ -12,41 +12,38 @@
 
 #include "ft_push_swap.h"
 
-size_t	ft_insert(t_stack *a, t_stack *b, t_cost moves)
+static void	ft_insert(t_stack *a, t_stack *b, t_cost moves, t_ops *ops)
 {
 	while (moves.a > 0 && moves.b > 0)
 	{
-		rr(a, b);
+		rr(a, b, ops);
 		moves.a--;
 		moves.b--;
 	}
 	while (moves.a < 0 && moves.b < 0)
 	{
-		rrr(a, b);
+		rrr(a, b, ops);
 		moves.a++;
 		moves.b++;
 	}
 	while (moves.a > 0)
-		(ra(a), moves.a--);
+		(ra(a, ops), moves.a--);
 	while (moves.a < 0)
-		(rra(a), moves.a++);
+		(rra(a, ops), moves.a++);
 	while (moves.b > 0)
-		(rb(b), moves.b--);
+		(rb(b, ops), moves.b--);
 	while (moves.b < 0)
-		(rrb(b), moves.b++);
-	pa(a, b);
-	return (moves.total + 1);
+		(rrb(b, ops), moves.b++);
+	pa(a, b, ops);
 }
 
-size_t	ft_final_rotate(t_stack *a)
+static void	ft_final_rotate(t_stack *a, t_ops *ops)
 {
 	t_node	*tmp;
 	size_t	i;
-	size_t	c;
 
 	tmp = a->head;
 	i = 0;
-	c = 0;
 	while (tmp->index != 0)
 	{
 		tmp = tmp->next;
@@ -55,28 +52,23 @@ size_t	ft_final_rotate(t_stack *a)
 	while (a->head->index != 0)
 	{
 		if (i <= (size_t)a->size - i)
-			(ra(a), c++);
+			ra(a, ops);
 		else if (i > (size_t)a->size - i)
-			(rra(a), c++);
+			rra(a, ops);
 	}
-	return (c);
 }
 
-size_t	ft_simple_sort(t_stack *a, t_stack *b)
+void	ft_simple_sort(t_stack *a, t_stack *b, t_ops *ops)
 {
 	t_cost	moves;
-	size_t	total_ops;
 
-	ft_assign_index(a);
 	while (a->size > 3)
-		pb(a, b);
-	total_ops = (size_t)b->size;
-	total_ops += ft_sort3(a);
+		pb(a, b, ops);
+	ft_sort3(a, ops);
 	while (b->size)
 	{
 		moves = ft_find_cheapest(a, b);
-		total_ops += ft_insert(a, b, moves);
+		ft_insert(a, b, moves, ops);
 	}
-	total_ops += ft_final_rotate(a);
-	return (total_ops);
+	ft_final_rotate(a, ops);
 }

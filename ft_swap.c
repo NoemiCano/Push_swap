@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 17:14:42 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 17:36:01 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,34 +37,34 @@ static void	ft_swap(t_stack *a)
 void	sa(t_stack *a, t_ops *ops)
 {
 	if (!a || a->size < 2)
-		return (0);
+		return ;
 	ft_putstr_fd("sa\n", 1);
 	ft_swap(a);
-	*sa++;
-	*total++;
+	ops->sa++;
+	ops->total++;
 }
 
 // (swap b): Intercambia los dos primeros elementos del stack b. No hace nada si hay solo uno o ningún elemento.
 void	sb(t_stack *b, t_ops *ops)
 {
 	if (!b || b->size < 2)
-		return (0);
+		return ;
 	ft_putstr_fd("sb\n", 1);
 	ft_swap(b);
-	*sb++;
-	*total++;
+	ops->sb++;
+	ops->total++;
 }
 
 // sa y sb a la vez.
 void	ss(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
-		return (0);
+		return ;
 	ft_putstr_fd("ss\n", 1);
 	if (a->size >= 2)
 		ft_swap(a);
 	if (b->size >= 2)
 		ft_swap(b);
-	*ss++;
-	*total++;
+	ops->ss++;
+	ops->total++;
 }

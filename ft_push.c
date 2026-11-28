@@ -16,20 +16,20 @@
 void	pa(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || !b->head)
-		return (0);
+		return ;
 	ft_putstr_fd("pa\n", 1);
 	ft_stack_add_front(a, ft_detach_stack_head(b));
-	*pa++;
-	*total++;
+	ops->pa++;
+	ops->total++;
 }
 
 // (push b): Toma el primer elemento del stack a y lo coloca el primero en el stack b. No hace nada si a está vacío.
 void	pb(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || !a->head)
-		return (0);
+		return ;
 	ft_putstr_fd("pb\n", 1);
 	ft_stack_add_front(b, ft_detach_stack_head(a));
-	*pb++;
-	*total++;
+	ops->pb++;
+	ops->total++;
 }
