@@ -106,7 +106,7 @@ void	print_stacks(t_stack *a, t_stack *b);
 // Funciones
 int		main(int argc, char *argv[]);
 double	compute_disorder(t_stack *stack);
-void	dynamic_chunk(t_stack *a, t_stack *b);
+void	dynamic_chunk(t_stack *a, t_stack *b, t_ops *op);
 int		parse_input(int argc, char **argv, t_stack *stack, int index);
 void	free_stack(t_stack *stack);
 void	write_error(void);
