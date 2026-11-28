@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 17:38:51 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/28 18:12:11 by frfaria          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,7 @@ t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
 void	ft_complex_sort(t_stack *a, t_stack *b, t_ops *ops);
 
 //TBD
-void	insertion(int arr, int size);
 void	ft_assign_index(t_stack *a);
-
-//Funciones de ayuda !!BORRAR ANTES DE ENTREGA!!
-void	print_stacks(t_stack *a, t_stack *b);
-
 
 // Funciones
 int		main(int argc, char *argv[]);

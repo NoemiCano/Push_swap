@@ -13,10 +13,8 @@ SRCS =	ft_push.c ft_swap.c ft_rotate.c ft_reverse_rotate.c \
 		push_swap.c \
 		simple.c simple_utils.c \
 		intermediate.c \
-		complex.c
-
-#!!Temporal, borrar despues!!
-SRCS += ft_print_stacks.c
+		complex.c \
+		adaptive.c
 
 OBJS = $(SRCS:.c=.o)
 
