@@ -17,7 +17,9 @@ SRCS =	ft_push.c \
 		intermediate.c \
 		parse_input.c \
 		push_swap.c \
-		utils.c
+		utils.c \
+		simple.c simple_utils.c \
+		complex.c
 
 #!!Temporal, borrar despues!!
 SRCS += ft_print_stacks.c

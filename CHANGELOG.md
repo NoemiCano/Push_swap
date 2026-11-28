@@ -18,6 +18,43 @@
 
 ## 📅 Historial
 
+### `28/11/2026` · `00:01`
+**Commit:** `complex sort implemented and working`
+
+- 🟢 Añadido el algoritmo **Binary LSD Radix Sort** como implementación de `ft_complex_sort()`.
+- 🔵 Implementado el procesamiento de bits desde el menos significativo (LSB) hasta el más significativo (MSB), utilizando los índices normalizados de los nodos.
+- 🔵 Implementada la distribución de elementos mediante `pb` para bits `0` y `ra` para bits `1`, restaurando los elementos de B a A mediante `pa` al finalizar cada iteración.
+- 🟣 Verificado el funcionamiento con valores positivos y negativos, comprobando que las pilas terminan correctamente ordenadas.
+- 🟢 Resultados de referencia: **1.084 operaciones para 100 elementos** y **6.784 operaciones para 500 elementos**.
+
+### `27/11/2026` · `18:48`
+**Commit:** `changed operator return type`
+
+- 🟢 Se cambió el tipo de retorno de todos los operadores de Push_swap de `void` a `size_t`.
+
+### `27/11/2026` · `00:35`
+**Commit:** `Implement and validate Turk Sort`
+
+- 🟢 Implementación completa del algoritmo Turk Sort para ordenar los elementos de A utilizando B como stack auxiliar.
+- 🔵 Implementación del cálculo de costes para encontrar la inserción más eficiente, aprovechando rotaciones simultáneas (`rr` y `rrr`).
+- 🟡 Implementación de la rotación final para dejar el menor índice en la cima de A.
+- ⚪ Validación con 1.000 números aleatorios mediante `checker_linux`: resultado `OK`, con 14.047 operaciones.
+
+### `24/11/2026` · `02:16`
+**Commit:** `advances on simple`
+
+- 🔵 Se cambia el tipo de `t_cost.total` de `int` a `size_t`.
+- 🟢 Se implementa `ft_sort3()` para ordenar los tres elementos restantes de A.
+- 🟢 Se añade `find_target()` para encontrar el objetivo de inserción de cada nodo de B en A.
+- 🟢 Se añade `no_target()` para localizar el nodo de menor índice cuando no existe un objetivo de inserción válido.
+- 🟢 Se comienza a implementar `ft_price()` y `ft_find_cheapest()` para calcular los costes de movimiento y seleccionar el movimiento más barato. (WIP)
+
+### `23/11/2026` · `20:54`
+**Commit:** `algoritmo simple (wip)`
+
+- 🟢 Se añade la estructura `t_cost` para almacenar los costes de movimientos del algoritmo simple.
+- 🔵 Se comienza a implementar el algoritmo simple, incluyendo el cálculo de precios y la búsqueda del movimiento más barato. (WIP)
+
 ### `22/11/2026` · `19:38`
 **Commit:** `separate index assign into its own function`
 

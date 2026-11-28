@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 12:00:32 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 15:58:25 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef FT_PUSH_SWAP_H
+# define FT_PUSH_SWAP_H
 
 # include "libft/libft.h"
 # include <stddef.h> // Es para incluir NULL y size_t
@@ -25,11 +25,17 @@ typedef struct s_node	//nodo para cada valor
 	struct s_node	*prev;	//posicion previa del stack
 }	t_node;
 
-typedef struct s_stack	//lista para cada stack
+typedef struct s_stack //lista para cada stack
 {
 	t_node	*head;		//apunta al primer elemento del stack
 	int		size;		//tamaño del stack
 }	t_stack;
+typedef struct s_cost //para calcular el coste en operaciones para mover nodos entre stacks (algoritmo simple)
+{
+	int		a;
+	int		b;
+	size_t	total;
+}	t_cost;
 
 typedef enum	e_strategy
 {
@@ -62,24 +68,31 @@ typedef struct s_ops
 }	t_ops;
 
 
-
 //Stack manipulation functions
 void	ft_stack_add_front(t_stack *stack, t_node *new);
 void	ft_stack_add_back(t_stack *stack, t_node *new);
-t_node	*ft_detach_stack_head(t_stack *stack); 
+t_node	*ft_detach_stack_head(t_stack *stack);
 
 //Operators
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+size_t	pa(t_stack *a, t_stack *b);
+size_t	pb(t_stack *a, t_stack *b);
+size_t	sa(t_stack *a);
+size_t	sb(t_stack *b);
+size_t	ss(t_stack *a, t_stack *b);
+size_t	ra(t_stack *a);
+size_t	rb(t_stack *b);
+size_t	rr(t_stack *a, t_stack *b);
+size_t	rra(t_stack *a);
+size_t	rrb(t_stack *b);
+size_t	rrr(t_stack *a, t_stack *b);
+
+//Simple sort
+size_t	ft_simple_sort(t_stack *a, t_stack *b);
+size_t	ft_sort3(t_stack *a);
+t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
+
+//complex sort
+size_t	ft_complex_sort(t_stack *a, t_stack *b);
 
 //TBD
 void	insertion(int arr, int size);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:35:47 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/22 18:30:25 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 15:59:26 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 void	pa(t_stack *a, t_stack *b)
 {
 	if (!a || !b || !b->head)
-		return ;
+		return (0);
 	ft_putstr_fd("pa\n", 1);
 	ft_stack_add_front(a, ft_detach_stack_head(b));
+	return (1);
 }
 
 // (push b): Toma el primer elemento del stack a y lo coloca el primero en el stack b. No hace nada si a está vacío.
 void	pb(t_stack *a, t_stack *b)
 {
 	if (!a || !b || !a->head)
-		return ;
+		return (0);
 	ft_putstr_fd("pb\n", 1);
 	ft_stack_add_front(b, ft_detach_stack_head(a));
+	return (1);
 }

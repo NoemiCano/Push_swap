@@ -13,7 +13,7 @@
 # include "ft_push_swap.h"
 
 // Calcular cuantos valores son mas pequeños
-static int count_smaller(t_node *start, int target_value)
+static int	count_smaller(t_node *start, int target_value)
 {
 	t_node	*cmp;
 	int		smaller;

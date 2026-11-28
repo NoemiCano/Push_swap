@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/22 18:37:49 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 16:01:56 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	ft_swap(t_stack *a)
 	}
 	tmp = a->head;				//valores temporales para hacer el cambio
 	tmp2 = a->head->next;
-
 	a->head->prev->next = tmp2;	//el next del ultimo elemento es asignado al 2o elm
 	tmp2->next->prev = tmp;		//el prev del 3er elemento es asignado al primer elemento (que sera colocado en 2a pos)
 	tmp->next = tmp2->next;		//next del primero se asigna al 3o
@@ -35,31 +34,34 @@ static void	ft_swap(t_stack *a)
 }
 
 //  (swap a): Intercambia los dos primeros elementos del stack a. No hace nada si hay solo uno o ningún elemento.
-void	sa(t_stack *a)
+size_t	sa(t_stack *a)
 {
 	if (!a || a->size < 2)
-		return ;
+		return (0);
 	ft_putstr_fd("sa\n", 1);
 	ft_swap(a);
+	return (1);
 }
 
 // (swap b): Intercambia los dos primeros elementos del stack b. No hace nada si hay solo uno o ningún elemento.
-void	sb(t_stack *b)
+size_t	sb(t_stack *b)
 {
 	if (!b || b->size < 2)
-		return ;
+		return (0);
 	ft_putstr_fd("sb\n", 1);
 	ft_swap(b);
+	return (1);
 }
 
 // sa y sb a la vez.
-void	ss(t_stack *a, t_stack *b)
+size_t	ss(t_stack *a, t_stack *b)
 {
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
-		return ;
+		return (0);
 	ft_putstr_fd("ss\n", 1);
 	if (a->size >= 2)
 		ft_swap(a);
 	if (b->size >= 2)
 		ft_swap(b);
+	return (1);
 }
