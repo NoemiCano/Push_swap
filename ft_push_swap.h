@@ -93,7 +93,7 @@ void	ft_sort3(t_stack *a, t_ops *ops);
 t_cost	ft_find_cheapest(t_stack *a, t_stack *b);
 
 //complex sort
-void	ft_complex_sort(t_stack *a, t_stack *b);
+void	ft_complex_sort(t_stack *a, t_stack *b, t_ops *ops);
 
 //TBD
 void	insertion(int arr, int size);
