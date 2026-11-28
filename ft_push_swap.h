@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 15:57:46 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 15:58:25 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 16:48:05 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <stddef.h> // Es para incluir NULL y size_t
 #include <limits.h> // Es para los INT_MIN y INT_MAX - comprobar que se pueden usar
+#include <stdio.h>
 	
 typedef struct s_node	//nodo para cada valor
 {
@@ -106,9 +107,9 @@ void	print_stacks(t_stack *a, t_stack *b);
 int		main(int argc, char *argv[]);
 double	compute_disorder(t_stack *stack);
 size_t	dynamic_chunk(t_stack *a, t_stack *b);
-int		parse_input(int argc, char **argv, t_stack *stack);
+int		parse_input(int argc, char **argv, t_stack *stack, int index);
 void	free_stack(t_stack *stack);
 void	write_error(void);
-
+void	adaptive(t_stack *a, t_stack *b, t_ops *op, double disorder_index);
 
 #endif

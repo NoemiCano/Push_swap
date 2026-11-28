@@ -3,38 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:16:32 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/28 11:27:43 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 17:02:41 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_push_swap.h"
 
 // No se como recibir el contador de cuantos sa sb... hacen
-static void call_benchmark(t_flag *flag, int movements, double disorder_index)
+static void call_benchmark(t_flag *flag, t_ops *op, double disorder_index)
 {
-	
+	ft_printf("disorder: %d%%", disorder_index);
+	if (flag->strategy == "ADAPTIVE")
+		ft_printf("Adaptive / O(n√n)");
+	else if (flag->strategy == "COMPLEX")
+		ft_printf("Complex / O(n log n)");
+	else if (flag->strategy == "MEDIUM")
+		ft_printf("Medium / O(n√n)");
+	else if (flag->strategy == "SIMPLE")
+		ft_printf("Simple / O(n^2)");
+	ft_printf("total_ops: %i", op->total);
+	ft_printf("sa: %i sb: %i ss: %i pa: %i pb: %i", op->sa, op->sb, op->ss, op->pa, op->pb);
+	ft_printf("ra: %i rb: %i rr: %i rra: %i rrb: %i rrr: %i", op->ra, op->rb, op->rr, op->rra, op->rrb, op->rrr);
 }
 
 // Llamar al algoritmo correspondiente
 static void call_algorithm(t_stack *a, t_stack *b, t_flag *flag, double disorder_index)
 {
-	int	movements;
+	t_ops op;
 
-	movements = 0;
-	
+	op = (t_ops){0};
 	if (flag->strategy == "SIMPLE")
-		movements += simple(); //Linkear el algoritmo simple
+		ft_simple_sort(&a, &b, &op);
 	else if (flag->strategy == "MEDIUM")
-		movements += dynamic_chunk(&a, &b);
+		dynamic_chunk(&a, &b, &op);
 	else if (flag->strategy == "COMPLEX")
-		movements += complex(); //Linkear el algoritmo complejo
+		ft_complex_sort(&a, &b, &op);
 	else if (flag->strategy == "ADAPTIVE")
-		movements += adaptive(); //Linkear el algoritmo adaptativo
+		adaptive(&a, &b, &op, disorder_index);
 	if (flag->bench == 1)
-		call_benchmark(flag, movements, disorder_index);
+		call_benchmark(flag, &op, disorder_index);
+	free_stack(&op);
 }
 
 static int check_flags(int argc, char **argv, t_flag *flag, int *start_index)
@@ -91,7 +102,7 @@ int main(int argc, char *argv[])
 	if (!check_flags(argc, argv, &flag, &i)) 	// Revisar flags
 		return (write_error(), 1);
 	a = (t_stack){NULL, 0};		// Rellenar el stack 'a'
-	if (!parse_input(argc, argv, &a)) // Me va a faltar pasarle la posición del index para que sepa donde van los números...
+	if (!parse_input(argc, argv, &a, i)) // Parseo del stack y rellenaro
 	{
 		free_stack(&a);
 		write_error();

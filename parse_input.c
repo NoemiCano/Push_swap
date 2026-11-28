@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 12:44:09 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/24 13:24:37 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 16:12:43 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,14 @@ static int	add_token(t_stack *stack, char *token)
 }
 
 // Recorre los argumentos recibidos y usa ft_split en cada uno. Así acepta tanto ./push_swap 3 2 1 como ./push_swap "3 2 1". Hay que liberar memoria despues del ft_split
-int	parse_input(int argc, char **argv, t_stack *stack)
+int	parse_input(int argc, char **argv, t_stack *stack, int index)
 {
     char	**words;
     int		i;
     int		j;
     int		valid;
 
-    i = 1;
+    i = index;
     while (i < argc)
     {
         words = ft_split(argv[i], ' ');

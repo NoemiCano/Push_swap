@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 18:28:35 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/10/08 18:49:17 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 16:50:28 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 // Parte 1 - Funciones de libc
 int				ft_atoi(const char *nptr);
@@ -69,5 +70,15 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)
 					(void *));
 t_list			*ft_lstnew(void *content);
 unsigned int	ft_lstsize(t_list *lst);
+// Printf
+int	ft_printf(char const *format, ...);
+int	print_integer(int nbr);
+int	print_int_unsigned(unsigned int nbr);
+int	print_hex_lower(unsigned long nbr);
+int	print_hex_upper(unsigned long nbr);
+int	print_char(char c);
+int	print_string(char *str);
+int	print_percentage(char c);
+int	print_pointer(void *ptr);
 
 #endif

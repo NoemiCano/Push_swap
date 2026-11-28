@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intermediate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 13:01:54 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/24 13:47:32 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 16:37:27 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,11 @@ static int	find_max_pos(t_stack *b)
 }
 
 // Pasar elementos de 'a' a 'b'
-static size_t pass_a_to_b(t_stack *a, t_stack *b, int size_chunk)
+static void pass_a_to_b(t_stack *a, t_stack *b, int size_chunk, t_ops *op)
 {
-	size_t	movements;
 	int		i;
 	int		limit;
 
-	movements = 0;
 	i = 1;
 	if (!a || !b || size_chunk <= 0)
 		return (0);
@@ -87,23 +85,19 @@ static size_t pass_a_to_b(t_stack *a, t_stack *b, int size_chunk)
 		while (a->size > 0 && a->head && has_index_below(a, limit))
 		{
 			if(a->head->index < limit)
-				pb(a, b);
+				pb(a, b, op);
 			else
-				ra(a);
-			movements++;
+				ra(a, op);
 		}
 		i++;
 	}
-	return (movements);
 }
 
 // Pasar elementos de 'b' a 'a'
-static size_t pass_b_to_a(t_stack *a, t_stack *b)
+static void pass_b_to_a(t_stack *a, t_stack *b, t_ops *op)
 {
-	size_t	movements;
 	int		pos;
 
-	movements = 0;
 	if (!a || !b)
 		return (0);
 	while (b->size > 0 && b->head)
@@ -111,30 +105,25 @@ static size_t pass_b_to_a(t_stack *a, t_stack *b)
 		pos = find_max_pos(b);
 		if (pos <= b->size / 2)
 			while (pos-- > 0)
-				(rb(b), movements++);
+				(rb(b, op));
 		else
 		{
 			pos = b->size - pos;
 			while (pos-- > 0)
-				(rrb(b), movements++);
+				(rrb(b, op));
 		}
-		pa(a, b);
-		movements++;
+		pa(a, b, op);
 	}
-	return (movements);
 }
 
 // Orden basado en chunks dinamicos (algoritmo intermedio). Devuelve el número de movimientos realizados.
-size_t dynamic_chunk(t_stack *a, t_stack *b)
+void dynamic_chunk(t_stack *a, t_stack *b, t_ops *op)
 {
 	int		size_chunk;
-	size_t	movements;
 
-	movements = 0;
 	if (!a || a->size <= 0)
 		return (0);
 	size_chunk = ft_square(a->size);	// Calcular el tamaño del chunk
-	movements += pass_a_to_b(a, b, size_chunk);	// Mover elementos de 'a' a 'b'
-	movements += pass_b_to_a(a, b); // Mover elementos de 'b' a 'a'
-	return (movements);
+	pass_a_to_b(a, b, size_chunk, op);	// Mover elementos de 'a' a 'b'
+	pass_b_to_a(a, b, op); // Mover elementos de 'b' a 'a'
 }

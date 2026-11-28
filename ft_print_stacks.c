@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_stacks.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frfaria <frfaria@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 20:15:40 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/22 16:11:25 by frfaria          ###   ########.fr       */
+/*   Updated: 2026/11/28 16:18:01 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-#include <stdio.h>
 
 static void print_stack(t_stack *a, char name)
 {
@@ -25,9 +24,7 @@ static void print_stack(t_stack *a, char name)
 		tmp = tmp->next;
 	}
 	printf("%d} (%d)\n", a->head->prev->value, a->size);
-
 }
-
 
 void	print_stacks(t_stack *a, t_stack *b)
 {
