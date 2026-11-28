@@ -6,7 +6,7 @@
 /*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:41:04 by frfaria           #+#    #+#             */
-/*   Updated: 2026/11/28 16:01:56 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 17:14:42 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,29 @@ static void	ft_swap(t_stack *a)
 }
 
 //  (swap a): Intercambia los dos primeros elementos del stack a. No hace nada si hay solo uno o ningún elemento.
-size_t	sa(t_stack *a)
+void	sa(t_stack *a, t_ops *ops)
 {
 	if (!a || a->size < 2)
 		return (0);
 	ft_putstr_fd("sa\n", 1);
 	ft_swap(a);
-	return (1);
+	*sa++;
+	*total++;
 }
 
 // (swap b): Intercambia los dos primeros elementos del stack b. No hace nada si hay solo uno o ningún elemento.
-size_t	sb(t_stack *b)
+void	sb(t_stack *b, t_ops *ops)
 {
 	if (!b || b->size < 2)
 		return (0);
 	ft_putstr_fd("sb\n", 1);
 	ft_swap(b);
-	return (1);
+	*sb++;
+	*total++;
 }
 
 // sa y sb a la vez.
-size_t	ss(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b, t_ops *ops)
 {
 	if (!a || !b || (a->size < 2 && b->size < 2))	//validacion
 		return (0);
@@ -63,5 +65,6 @@ size_t	ss(t_stack *a, t_stack *b)
 		ft_swap(a);
 	if (b->size >= 2)
 		ft_swap(b);
-	return (1);
+	*ss++;
+	*total++;
 }
