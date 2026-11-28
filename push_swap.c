@@ -6,11 +6,36 @@
 /*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:16:32 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/26 17:48:10 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 11:27:43 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_push_swap.h"
+
+// No se como recibir el contador de cuantos sa sb... hacen
+static void call_benchmark(t_flag *flag, int movements, double disorder_index)
+{
+	
+}
+
+// Llamar al algoritmo correspondiente
+static void call_algorithm(t_stack *a, t_stack *b, t_flag *flag, double disorder_index)
+{
+	int	movements;
+
+	movements = 0;
+	
+	if (flag->strategy == "SIMPLE")
+		movements += simple(); //Linkear el algoritmo simple
+	else if (flag->strategy == "MEDIUM")
+		movements += dynamic_chunk(&a, &b);
+	else if (flag->strategy == "COMPLEX")
+		movements += complex(); //Linkear el algoritmo complejo
+	else if (flag->strategy == "ADAPTIVE")
+		movements += adaptive(); //Linkear el algoritmo adaptativo
+	if (flag->bench == 1)
+		call_benchmark(flag, movements, disorder_index);
+}
 
 static int check_flags(int argc, char **argv, t_flag *flag, int *start_index)
 {
@@ -60,6 +85,7 @@ int main(int argc, char *argv[])
 	double disorder_index;
 	int	i;
 
+	b = (t_stack){NULL, 0};
 	if (argc == 1)
 		return (0);
 	if (!check_flags(argc, argv, &flag, &i)) 	// Revisar flags
@@ -73,17 +99,7 @@ int main(int argc, char *argv[])
 	}
 	ft_assign_index(&a);	// Asignar un índice a las posiciones
 	disorder_index = compute_disorder(&a);	// Asignar el índice de deshorden
-
-	// Llamar al algoritmo correspondiente
-	// Ejecutar el benchark si corresponde
-	// Liberar los stacks
+	call_algorithm(&a, &b, &flag, disorder_index); // Llamar al algoritmo correspondiente // Ejecutar el benchark si corresponde
+	free_stack(&a); // Liberar los stacks
+	free_stack(&b);
 }
-
-// main inicializa A y B vacíos. 
-// OK - Si no hay argumentos (argc == 1), termina sin imprimir nada.
-// OK - Parseo y construcción de A: acepta tanto ./push_swap 3 2 1 como ./push_swap "3 2 1". El parseo comprueba cada valor y crea los nodos.
-// OK - Validación: cada token debe tener un signo opcional y al menos un dígito; el resto deben ser dígitos. Comprueba el rango de int antes de convertirlo y detecta duplicados por su valor numérico —por ejemplo, 01 y 1 son duplicados—.
-// OK - Si algo falla, se libera lo que se haya reservado, se imprime Error\n por stderr y se devuelve un código distinto de cero. 
-// Si todo va bien, se asignan índices y se llama al algoritmo.
-// Se liberan los stacks al terminar.
-// Benchmark
