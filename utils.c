@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncano-co <ncano-co@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ncano-co <ncano-co@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 18:17:03 by ncano-co          #+#    #+#             */
-/*   Updated: 2026/11/24 13:38:56 by ncano-co         ###   ########.fr       */
+/*   Updated: 2026/11/28 18:08:41 by ncano-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,32 @@ void	free_stack(t_stack *stack)
     }
 }
 
+// Calcula el índice de deshorden entre 0 y 1.
+double compute_disorder(t_stack *stack)
+{
+	t_node	*current;
+	t_node	*runner;
+	long	mistakes;
+	int		i;
+	int		j;
 
-
-// En caso de error, deberá mostrar “Error” seguido de un \n en la salida de error estándar. Algunos de los posibles errores son, por ejemplo: argumentos que no son enteros, argumentos superiores a un número entero, y/o números duplicados.
-// Asignar el index desde aquí
-// ft_assign_index asigna a cada nodo el número de valores menores. Como no detecta duplicados, dos valores iguales recibirían el mismo índice; valida duplicados antes de llamar a esa función.
+	i = 0;
+	mistakes = 0;
+	current = stack->head;
+	if (!stack || stack->size <= 1 || !stack->head)
+		return (0.0);
+	while (i < stack->size - 1)
+	{
+		runner = current->next;
+		j = i + 1;
+		while (j++ < stack->size)
+		{
+			if (current->value > runner->value)
+				mistakes++;
+			runner = runner->next;
+		}
+		current = current->next;
+		i++;
+	}
+	return ((double)mistakes / (((double)stack->size * (stack->size - 1)) / 2.0));
+}
