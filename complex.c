@@ -12,7 +12,7 @@
 
 #include "ft_push_swap.h"
 
-void	ft_iterate_bit(t_stack *a, t_stack *b, t_ops *ops)
+void	ft_iterate_bit(t_stack *a, t_stack *b, size_t bit, t_ops *ops)
 {
 	int		i;
 
